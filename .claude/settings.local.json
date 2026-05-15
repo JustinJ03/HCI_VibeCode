@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__get_design_context",
+      "Bash(Get-ChildItem \"C:\\\\laragon\\\\www\\\\HCI_VibeCode\")",
+      "Bash(Format-Table Name, Length -AutoSize)",
+      "Bash(docker build *)",
+      "Bash(docker run *)",
+      "Bash(Remove-Item -Path \"C:\\\\laragon\\\\www\\\\HCI_VibeCode\\\\styles.css\" -ErrorAction SilentlyContinue)",
+      "Bash(Remove-Item -Path \"C:\\\\laragon\\\\www\\\\HCI_VibeCode\\\\app.js\" -ErrorAction SilentlyContinue)",
+      "Bash(Write-Output \"old flat files removed\")",
+      "mcp__figma__get_screenshot",
+      "Skill(superpowers:systematic-debugging)"
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true
+  }
+}
