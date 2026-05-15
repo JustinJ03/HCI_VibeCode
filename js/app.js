@@ -109,6 +109,8 @@ const CHARGING_STATIONS = [
 
 /* ══ NAVIGATION ══ */
 function navigate(to) {
+  closeRecentApps();
+  closeEntSidebar();
   if (to === currentScreen) return;
   const prev = document.getElementById(currentScreen);
   const next = document.getElementById(to);
@@ -128,6 +130,8 @@ function navigate(to) {
 }
 
 function goBack() {
+  closeRecentApps();
+  closeEntSidebar();
   if (navHistory.length === 0) return;
   const prev = navHistory.pop();
   const curr = document.getElementById(currentScreen);

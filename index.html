@@ -752,12 +752,12 @@
   <!-- ── RECENT APPS OVERLAY ── -->
   <div id="recent-overlay">
     <div class="recent-overlay-bg" onclick="closeRecentApps()"></div>
-    <div class="recent-overlay-content">
+    <div class="recent-overlay-content" onclick="if(event.target===this) closeRecentApps()">
       <div class="recent-overlay-header">
         <span class="recent-overlay-title">Recent Apps</span>
         <button class="recent-clear-btn" onclick="clearRecentApps()">Clear All</button>
       </div>
-      <div id="recent-cards" class="recent-cards"></div>
+      <div id="recent-cards" class="recent-cards" onclick="if(event.target===this) closeRecentApps()"></div>
     </div>
   </div>
 

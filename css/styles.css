@@ -123,15 +123,15 @@ html, body {
   padding: 28px 32px;
   opacity: 0;
   transform: translateX(30px);
-  transition: opacity var(--trans), transform var(--trans);
-  pointer-events: none;
+  transition: opacity var(--trans), transform var(--trans), visibility var(--trans);
+  visibility: hidden;
   overflow: hidden;
 }
 
 .screen.active {
   opacity: 1;
   transform: translateX(0);
-  pointer-events: all;
+  visibility: visible;
 }
 
 .screen.exit {
@@ -242,14 +242,15 @@ html, body {
   align-items: center;
   gap: 8px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   z-index: 20;
   min-width: 220px;
 }
 
 #vol-overlay.visible {
   opacity: 1;
+  visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
 
@@ -1262,10 +1263,11 @@ input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   position: absolute;
   inset: 0;
   z-index: 50;
-  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
 }
 
-#ent-sidebar.open { pointer-events: all; }
+#ent-sidebar.open { visibility: visible; }
 
 .ent-sidebar-backdrop {
   position: absolute;
@@ -1365,13 +1367,13 @@ input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   inset: 0;
   bottom: var(--nav-h);
   z-index: 45;
-  pointer-events: none;
+  visibility: hidden;
   opacity: 0;
-  transition: opacity 0.28s ease;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
 }
 
 #recent-overlay.open {
-  pointer-events: all;
+  visibility: visible;
   opacity: 1;
 }
 
@@ -1509,13 +1511,13 @@ input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   inset: 0;
   padding: 28px 32px;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.28s ease;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
 }
 
-.nav-view.active {
+.screen.active .nav-view.active {
   opacity: 1;
-  pointer-events: all;
+  visibility: visible;
 }
 
 /* ── LOCATION SELECT ── */
